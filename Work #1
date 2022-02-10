@@ -1,0 +1,203 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Feb 10 14:28:35 2022
+
+@author: Manon
+"""
+
+import numpy as np # import the library
+import matplotlib.pyplot as plt #import matplot lib
+
+
+
+p = np.zeros(100) # create the array
+
+
+p[0]=2 # I define the first vap = np.zeros(100) # create the array
+for i in range(100): # write the loop
+    p[0]=2
+    p[i] = p[i-1] + a*p[i-1] # write the index of the loop in the array
+print (p)
+
+
+
+x = np.arange(100) 
+print(x)
+
+p0 = 2 # First value of the array
+a = 0.1 # I fix the alpha parameter to 0.1
+print(p[0])
+
+
+
+p[1] = p[0] + a*p[0] # I calculate the second value of the array
+
+print(p[1])
+
+
+
+
+
+
+# I plot the evolution of the population for alpha = 0.1
+plt.title("Evolution of the population (\u03B1 = 0.1)")
+plt.xlabel("Year")
+plt.ylabel("Population (number of individuals)")
+plt.plot(x, p, color="red", label = "population growth") 
+ 
+plt.show() 
+plt.savefig('figure1.png')
+
+
+# I plot the evolution of the population for alpha = 0.01
+a = 0.01 
+plt.title("Evolution of the population (\u03B1 = 0.01)")
+plt.xlabel("Year")
+plt.ylabel("Population (number of individuals)")
+plt.plot(x, p, color="red", label = "population growth") 
+ 
+plt.show() 
+
+
+# I plot the evolution of the population for alpha = 0.2
+a = 0.2 # I fix the alpha parameter to 0.2
+plt.title("Evolution of the population (\u03B1 = 0.2)")
+plt.xlabel("Year")
+plt.ylabel("Population (number of individuals)")
+plt.plot(x, p, color="red", label = "population growth") 
+ 
+plt.show() 
+
+
+# I plot the evolution of the population for alpha = 0.4
+a = 0.4 
+plt.title("Evolution of the population (\u03B1 = 0.04)")
+plt.xlabel("Year")
+plt.ylabel("Number of individuals")
+plt.plot(x, p, color="red", label = "population growth") 
+ 
+plt.show() 
+
+
+
+# I compute the function "α (p) = 200 − p"
+
+p = np.zeros(500) # create the array
+
+for i in range(500): # write the loop
+    p[0]=2
+    p[i] = p[i-1] + a*p[i-1] # write the index of the loop in the array
+print (p)
+
+ap = 200 - p
+print(ap)
+
+
+x = np.arange(500)
+print(x)
+
+# I plot the function "α (p) = 200 − p"
+plt.title("Modulation of the growth factor")
+plt.xlabel("Year")
+plt.ylabel("Growth factor")
+plt.plot(x, ap, color="red")
+
+plt.show()
+
+
+
+# I compute the function "pn = pn−1 + βpn−1(200 − pn−1)" for b = 0.001
+
+p = np.zeros(500) # create the array
+b = 0.001
+
+for i in range(500): # write the loop
+    p[0]=2
+    p[i] = p[i-1] + b*p[i-1]*(200 - p[i-1]) # write the index of the loop in the array
+print (p)
+
+
+
+#First, I play around with b
+
+# I plot the function "pn = pn−1 + βpn−1(200 − pn−1)" for b = 0.001
+b = 0.001
+plt.title("Evolution of the population (u03B2 = 0.001)")
+plt.xlabel("Year")
+plt.ylabel("Number of individuals")
+plt.plot(x, p, color="red")
+
+plt.show()
+
+
+# I plot the function "pn = pn−1 + βpn−1(200 − pn−1)" for b = 0.0001
+b = 0.0001
+plt.title("Evolution of the population (u03B2 = 0.0001)")
+plt.xlabel("Year")
+plt.ylabel("Number of individuals")
+plt.plot(x, p, color="red")
+
+plt.show()
+
+
+
+# I plot the function "pn = pn−1 + βpn−1(200 − pn−1)" for b = 0.003
+b = 0.003
+plt.title("Evolution of the population (u03B2 = 0.003)")
+plt.xlabel("Year")
+plt.ylabel("Number of individuals")
+plt.plot(x, p, color="red")
+
+plt.show()
+
+
+#Second, I play around with the population's starting size
+
+p = np.zeros(500) # create the array
+b = 0.001
+
+for i in range(500): # write the loop
+    p[0]=2
+    p[i] = p[i-1] + b*p[i-1]*(200 - p[i-1]) # write the index of the loop in the array
+print (p)
+
+plt.title("Evolution of the population (p0 = 2)")
+plt.xlabel("Year")
+plt.ylabel("Number of individuals")
+plt.plot(x, p, color="red")
+
+plt.show()
+
+
+p = np.zeros(500) # create the array
+b = 0.001
+
+for i in range(500): # write the loop
+    p[0]=10
+    p[i] = p[i-1] + b*p[i-1]*(200 - p[i-1]) # write the index of the loop in the array
+print (p)
+
+plt.title("Evolution of the population (p0 = 10)")
+plt.xlabel("Year")
+plt.ylabel("Number of individuals")
+plt.plot(x, p, color="red")
+
+plt.show()
+
+
+
+p = np.zeros(500) # create the array
+b = 0.001
+
+for i in range(500): # write the loop
+    p[0]=100
+    p[i] = p[i-1] + b*p[i-1]*(200 - p[i-1]) # write the index of the loop in the array
+print (p)
+
+plt.title("Evolution of the population (p0 = 100)")
+plt.xlabel("Year")
+plt.ylabel("Number of individuals")
+plt.plot(x, p, color="red")
+plt.savefig('figure1.png')
+
+plt.show()
